@@ -71,7 +71,7 @@ class User extends Model{
 	{
 		$sql = new Sql();
 
-		return $sql->select("SELECT * FROM tb_users a INNER JOIN tb_persons b USING(idperson) ORDER BY b.desperson");
+		return $sql->select("SELECT * FROM tb_users a INNER JOIN tb_persons b USING(idperson) ORDER BY a.iduser");
 
 	}
 
@@ -134,8 +134,8 @@ class User extends Model{
 		));
 
 
-		var_dump("CALL sp_users_delete(" . $this->getiduser() . ")");
-		exit;
+		// var_dump("CALL sp_users_delete(" . $this->getiduser() . ")");
+		// exit;
 
 	}
 
