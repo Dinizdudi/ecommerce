@@ -309,11 +309,26 @@ $app->post("/admin/categories/:idcategory", function($idcategory){
 
 	$category->setData($_POST);
 
-	$category->save();
+	$category->save(); //update e salva já que usa a procedure
 
 	header("location: /admin/categories");
 
 	exit;
+
+});
+
+$app->get("/categories/:idcategory", function($idcategory){
+
+	$category = new Category();
+
+	$category->get((int)$idcategory);
+
+	$page = new Page();
+
+	$page->setTpl("category", [
+		'category'=> $category->getValues(),
+		'products'=>[]
+	]);
 
 });
 
