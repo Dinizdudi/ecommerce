@@ -15,7 +15,7 @@ class Model {
 		switch($method)
 		{
 			case "get":
-				return $this->values[$fieldName]; 
+				return (isset($this->values[$fieldName])) ? $this->values[$fieldName] : NULL ; 
 				// get -> retorna o valor do campo em questão.Ficaria tipo "return $this->values[iduser]" que vai retornar o valor do id do usuario que está logando
 			break;
 
